@@ -33,7 +33,7 @@ body {
 }
 
 .slide > h1 {
-	font-size: 50px;
+	font-size: 40px;
 	margin-top: 0;
 	text-align: center;
 }
@@ -217,13 +217,13 @@ body {
 	<article class="slide">
 		<h1>Some of My Art</h1>
 		<style type="text/css">
-		.my-art .item {
+		.image-grid .item {
 			width: 33.33%;
 			display: block;
 			float: left;
 		}
 		</style>
-		<div class="my-art">
+		<div class="image-grid">
 			<img class="item" src="img/art/concertposter.jpg">
 			<img class="item" src="img/art/holetofill.jpg">
 			<img class="item" src="img/art/livingtree.jpg">
@@ -232,13 +232,13 @@ body {
 			<img class="item" src="img/art/musicbox.jpg">
 			<img class="item" src="img/art/overcome.jpg">
 			<img class="item" src="img/art/solitary.jpg">
-			<img class="item" src="img/art/sower.jpg">
 			<img class="item" src="img/art/vineAndBranches.jpg">
 			<img class="item" src="img/art/womb.jpg">
+			<img class="item" src="img/art/sower.jpg">
 		</div>
 		<script>
 		$(function(){
-			var $container = $('.my-art');
+			var $container = $('.image-grid');
 			$container.imagesLoaded(function(){
 				$container.masonry({
 					itemSelector : '.item',
@@ -249,11 +249,12 @@ body {
 	</article>
 	
 	<article class="slide">
-	
+        
 	</article>
 
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="/path/to/jquery.masonry.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://path/to/jquery.masonry.min.js"></script>
 </body>
 </html>
+
