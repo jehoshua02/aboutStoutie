@@ -2,83 +2,68 @@
 <html>
 <head>
 <title>About Stoutie</title>
-
-<style type="text/css">
-html, body {
-	height: 100%;
-}
-
-body {
-	background-color: #262211;
-	margin: 0;
-}
-
-.page-wrap {
-	width: 900px;
-	margin: 0 auto;
-	height: 100%;
-}
-
-.slide {
-	min-height: 100%;
-	// background-color: #D4BB81;
-	color: white;
-	margin-bottom: 20px;
-	padding: 20px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	position: relative;
-	overflow: hidden;
-}
-
-.slide > h1 {
-	font-size: 40px;
-	margin-top: 0;
-	text-align: center;
-}
-
-.image-grid td {
-	vertical-align: top;
-}
-
-.image-grid img {
-	width: 100%;
-}
-
-</style>
-
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.color.min.js"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script src="js/global.js"></script>
 </head>
 <body>
+
+<a href="javascript:void(0);" class="colorz-button" style="position: fixed; top: 20px; right: 20px; text-decoration: none; color: white" onClick="colorSlides()">CoLOrZ :D</a>
+
 <div class="page-wrap">
 
-	<article class="slide" style="background: url('img/birthdayBalloons.jpg') center; background-repeat: no-repeat; background-size: contain">
-		<h1 style="text-align: center; font-size: 150px; position: absolute; top: 0; margin: 0; color: white">About Stoutie</h1>
-	</article>
+<article id="about-stoutie" class="slide">
+    <style type="text/css">
+        .slide#about-stoutie {
+            background: url('img/birthdayBalloons.jpg') center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .slide#about-stoutie .slide-title {
+            font-size: 150px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            color: white;
+        }
+    </style>
+    <h1 class="slide-title"><span style="font-size: 70px">Getting to Know</span> Stoutie</h1>
+</article>
 
-	<article class="slide">
-		<h1>This is where it started ...</h1>
-		<img src="img/theBeginning.jpg" style="float: left; margin-right: 50px">
-		<ul>
-			<li>This is my mom -- Carolyn Faye Sorvik</li>
-			<li>I'm in her tummy</li>
-			<li>Stylish outfit (no?)</li>
-			<li>This picture was taken in a storage unit</li>
-		</ul>
-	</article>
+<article id="the-beginning" class="slide">
+	<h1 class="slide-title">This is where it started ...</h1>
+    <div class="slide-body">
+    	<img class="slide-img" src="img/theBeginning.jpg">
+	    <ul>
+		    <li>This is my mom -- Carolyn Faye Sorvik</li>
+		    <li>I'm in her tummy</li>
+		    <li>Stylish outfit (no?)</li>
+		    <li>This picture was taken in a storage unit</li>
+	    </ul>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>My Dad?</h1>
-		<img src="img/myDad.jpg" style="float: left; margin-right: 50px; width: 50%">
-		<ul>
-			<li>Name: Unknown</li>
-			<li>Last Seen: Never</li>
-		</ul>
-	</article>
+<article id="my-dad" class="slide">
+	<h1 class="slide-title">My Dad?</h1>
+    <div class="slide-body">
+        <img class="slide-img" src="img/myDad.jpg">
+	    <ul>
+		    <li>Name: Unknown</li>
+		    <li>Last Seen: Never</li>
+            <li>I think I used to have a picture, but I lost it</li>
+	    </ul>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>So Where'd the Name Come From?</h1>
-		<img src="img/timothyStoutenburg.jpg" style="float: left; margin-right: 50px; width: 50%">
+<article id="the-name" class="slide">
+    <h1 class="slide-title">So Where'd the Name Come From?</h1>
+    <div class="slide-body">
+        <img class="slide-img" src="img/timothyStoutenburg.jpg">
 		<ul>
 			<li>Timothy Stoutenburg -- the hairy dude with the braids</li>
 			<li>Had some relationship with my mom, when she was pregnant with me, but apparently not my dad</li>
@@ -86,175 +71,165 @@ body {
 			<li>Lost an arm, and legs didn't fully recover</li>
 			<li>I guess my mom was going to marry him, but it fell through after the accident</li>
 		</ul>
-	</article>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Welcome Stoutie!</h1>
-		<img src="img/welcomeStoutie.jpg" style="float: left; margin-right: 50px; width: 50%">
-		<ul>
-			<li>Joshua Kahapea Stoutenburg</li>
-			<li>Born: April 5th, 1984</li>
-			<li>I look happy!</li>
-		</ul>
-	</article>
+<article id="welcome-stoutie" class="slide">
+	<h1 class="slide-title">Welcome Stoutie!</h1>
+    <div class="slide-body">
+	    <img class="slide-img" src="img/welcomeStoutie.jpg">
+	    <ul>
+		    <li>Joshua Kahapea Stoutenburg</li>
+		    <li>Born: April 5th, 1984</li>
+		    <li>I look happy!</li>
+	    </ul>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Years 1-5</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/babyStoutieAndMommy.jpg"></td>
-				<td><img src="img/stoutieWithSoccerBall.jpg"></td>
-				<td><img src="img/slickStoutie.jpg"></td>
-			</tr>
-			<tr>
-				<td colspan="3"><img src="img/stoutieAge5.jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="years-1-5" class="slide">
+	<h1 class="slide-title">Years 1-5</h1>
+    <div class="slide-body">
+	    <table class="image-grid" style="width: 100%">
+		    <tr>
+			    <td><img src="img/babyStoutieAndMommy.jpg"></td>
+			    <td><img src="img/stoutieWithSoccerBall.jpg"></td>
+			    <td><img src="img/slickStoutie.jpg"></td>
+		    </tr>
+		    <tr>
+			    <td colspan="3"><img src="img/stoutieAge5.jpg"></td>
+		    </tr>
+	    </table>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Elementary School</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/elementarySchoolPortraits/IMG_0004.jpg"></td>
-				<td><img src="img/elementarySchoolPortraits/IMG_0003.jpg"></td>
-				<td><img src="img/elementarySchoolPortraits/IMG_0033 (2).jpg"></td>
-				<td><img src="img/elementarySchoolPortraits/IMG_0036 (2).jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="elementary-school" class="slide">
+	<h1 class="slide-title">Elementary School</h1>
+    <div class="slide-body">
+	    <table class="image-grid" style="width: 100%">
+		    <tr>
+			    <td><img src="img/elementarySchoolPortraits/IMG_0004.jpg"></td>
+			    <td><img src="img/elementarySchoolPortraits/IMG_0003.jpg"></td>
+			    <td><img src="img/elementarySchoolPortraits/IMG_0033 (2).jpg"></td>
+			    <td><img src="img/elementarySchoolPortraits/IMG_0036 (2).jpg"></td>
+		    </tr>
+	    </table>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Elementary School - 2nd Grade</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/2ndGradeClass.jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="elementary-school-2nd-grade" class="slide">
+	<h1 class="slide-title">Elementary School - 2nd Grade</h1>
+    <div class="slide-body">
+        <img src="img/2ndGradeClass.jpg" style="width: 100%">
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Elementary School - 3rd Grade</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/3rdGradeClass.jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="elementary-school-3rd-grade" class="slide">
+	<h1 class="slide-title">Elementary School - 3rd Grade</h1>
+    <div class="slide-body">
+        <img src="img/3rdGradeClass.jpg" style="width: 100%">
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Elementary School - 4th Grade</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/4thGradeClass.jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="elementary-school-4th-grade" class="slide">
+	<h1 class="slide-title">Elementary School - 4th Grade</h1>
+    <div class="slide-body">
+        <img src="img/4thGradeClass.jpg" style="width: 100%">
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Elementary School - 5th Grade</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/5thGradeClass.jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="elementary-school-5th-grade" class="slide">
+	<h1 class="slide-title">Elementary School - 5th Grade</h1>
+    <div class="slide-body">
+        <img src="img/5thGradeClass.jpg" style="width: 100%">
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>May 1995</h1>
-		<img src="img/ripMom.jpg" style="display: block; width: 40%; margin: auto">
-	</article>
+<article id="may-1995" class="slide">
+	<h1 class="slide-title">May 1995</h1>
+    <div class="slide-body">
+    	<img src="img/ripMom.jpg" style="display: block; width: 40%; margin: auto">
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Terry & Brenda Sorvik</h1>
-		<table class="image-grid" style="width: 40%; margin: auto">
-			<tr>
-				<td><img src="img/terry.jpg"></td>
-			</tr>
-			<tr>
-				<td><img src="img/brenda.jpg"></td>
-			</tr>
-		</table>
-	</article>
+<article id="terry-brenda-sorvik" class="slide">
+	<h1 class="slide-title">Terry & Brenda Sorvik</h1>
+    <div class="slide-body">
+	    <table class="image-grid" style="width: 40%; margin: auto">
+		    <tr>
+			    <td><img src="img/terry.jpg"></td>
+		    </tr>
+		    <tr>
+			    <td><img src="img/brenda.jpg"></td>
+		    </tr>
+	    </table>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Vacations</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/vacations/universalstudios.jpg"></td>
-				<td><img src="img/vacations/knottsburyFarm.jpg"></td>
-			</tr>
-		</table>
-		<p style="text-align: center">Disneyland, Universal Studios, Knottsbury Farm, Las Vegas, Beach Trips, Camping</p>
-	</article>
+<article id="vacations" class="slide">
+	<h1 class="slide-title">Vacations</h1>
+    <div class="slide-body">
+	    <table class="image-grid" style="width: 100%">
+		    <tr>
+			    <td><img src="img/vacations/universalstudios.jpg"></td>
+			    <td><img src="img/vacations/knottsburyFarm.jpg"></td>
+		    </tr>
+	    </table>
+	    <p style="text-align: center">Disneyland, Universal Studios, Knottsbury Farm, Las Vegas, Beach Trips, Camping</p>
+    </div>
+</article>
 
-	<article class="slide">
-		<h1>Holidays</h1>
-		<table class="image-grid" style="width: 100%">
-			<tr>
-				<td><img src="img/holidays/halloween.jpg"></td>
-				<td><img src="img/holidays/christmas.jpg"></td>
-			</tr>
-		</table>
+	<article id="holidays" class="slide">
+		<h1 class="slide-title">Holidays</h1>
+        <div class="slide-body">
+		    <table class="image-grid" style="width: 100%">
+			    <tr>
+				    <td><img src="img/holidays/halloween.jpg"></td>
+				    <td><img src="img/holidays/christmas.jpg"></td>
+			    </tr>
+		    </table>
+        </div>
 	</article>
 	
-	<article class="slide">
-		<h1>I Have An Orange Belt!</h1>
-		<img src="img/karatekid.jpg" style="width: 40%; margin: auto; display: block">
+	<article id="i-have-an-orange-belt" class="slide">
+		<h1 class="slide-title">I Have An Orange Belt!</h1>
+        <div class="slide-body">
+    		<img src="img/karatekid.jpg" style="width: 40%; margin: auto; display: block">
+        </div>
 	</article>
 
-	<article class="slide">
-		<h1>The Arts</h1>
-		<ul style="font-size: 40px; width: 200px; margin: auto">
-			<li>Drawing</li>
-			<li>Painting</li>
-			<li>Writing</li>
-			<li>Orchestra</li>
-			<li>Theatre</li>
-		</ul>
+	<article id="the-arts" class="slide">
+		<h1 class="slide-title">The Arts</h1>
+        <div class="slide-body">
+		    <ul style="font-size: 40px; width: 200px; margin: auto">
+			    <li>Drawing</li>
+			    <li>Painting</li>
+			    <li>Writing</li>
+			    <li>Orchestra</li>
+			    <li>Theatre</li>
+		    </ul>
+        </div>
 	</article>
 	
-	<article class="slide">
-		<h1>Some of My Art</h1>
-		<style type="text/css">
-		.image-grid .item {
-			width: 33.33%;
-			display: block;
-			float: left;
-		}
-		</style>
-		<div class="image-grid">
-			<img class="item" src="img/art/concertposter.jpg">
-			<img class="item" src="img/art/holetofill.jpg">
-			<img class="item" src="img/art/livingtree.jpg">
-			<img class="item" src="img/art/lonely.jpg">
-			<img class="item" src="img/art/magician.jpg">
-			<img class="item" src="img/art/musicbox.jpg">
-			<img class="item" src="img/art/overcome.jpg">
-			<img class="item" src="img/art/solitary.jpg">
-			<img class="item" src="img/art/vineAndBranches.jpg">
-			<img class="item" src="img/art/womb.jpg">
-			<img class="item" src="img/art/sower.jpg">
-		</div>
-		<script>
-		$(function(){
-			var $container = $('.image-grid');
-			$container.imagesLoaded(function(){
-				$container.masonry({
-					itemSelector : '.item',
-				});
-			});
-		});
-		</script>
+	<article id="some-of-my-art" class="slide">
+		<h1 class="slide-title">Some of My Art</h1>
+        <div class="slide-body">
+		    <div class="image-grid">
+			    <img class="item" src="img/art/concertposter.jpg">
+			    <img class="item" src="img/art/holetofill.jpg">
+			    <img class="item" src="img/art/livingtree.jpg">
+			    <img class="item" src="img/art/lonely.jpg">
+			    <img class="item" src="img/art/magician.jpg">
+			    <img class="item" src="img/art/musicbox.jpg">
+			    <img class="item" src="img/art/overcome.jpg">
+			    <img class="item" src="img/art/solitary.jpg">
+			    <img class="item" src="img/art/vineAndBranches.jpg">
+			    <img class="item" src="img/art/womb.jpg">
+			    <img class="item" src="img/art/sower.jpg">
+		    </div>
+        </div>
 	</article>
 	
-	<article class="slide">
-        
-	</article>
-
 </div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://path/to/jquery.masonry.min.js"></script>
 </body>
 </html>
 
