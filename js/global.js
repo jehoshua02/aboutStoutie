@@ -17,7 +17,6 @@ function initImageGrids()
 	$container.imagesLoaded(function(){
 		$container.masonry({
 			itemSelector: '.item',
-            columnWidth: 286
 		});
 	});
 }
