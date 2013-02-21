@@ -6,6 +6,7 @@ sort($slides);
 $slideId = function ($slide) use ($slideDir) {
     return 'slide-' . trim(str_replace($slideDir, '', dirname($slide)), '/');
 };
+$slideIds = array_map($slideId, $slides);
 
 ?>
 <!DOCTYPE html>
@@ -20,15 +21,17 @@ $slideId = function ($slide) use ($slideDir) {
 </head>
 <body>
 
-<a href="javascript:void(0);" class="colorz-button" style="position: fixed; top: 20px; right: 20px; text-decoration: none; color: white" onClick="colorSlides()">CoLOrZ :D</a>
+<a href="javascript:void(0);" class="colorz-button" onClick="colorSlides()">CoLOrZ :D</a>
 
 <div class="page-wrap">
 
-<?php foreach ($slides as $slide): ?>
-<article id="<?php echo $slideId($slide) ?>" class="slide">
-<?php echo file_get_contents($slide) ?>
-</article>
-<?php endforeach ?>
+    <div class="slides">
+        <?php foreach ($slides as $i => $slide): ?>
+        <article id="<?php echo $slideIds[$i] ?>" class="slide">
+        <?php echo file_get_contents($slide) ?>
+        </article>
+        <?php endforeach ?>
+    </div>
 
 </div>
 
