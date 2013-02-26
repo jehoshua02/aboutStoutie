@@ -20,11 +20,9 @@ function initSlides()
     });
 
     // determine current slide
-    if (!window.location.hash) {
-        scrollToSlide($slideIds[0]);
-    } else {
-        scrollToSlide(window.location.hash.replace('#', ''));
-    }
+    $('body').imagesLoaded(function () {
+        scrollToSlide((!window.location.hash) ? $slideIds[0] : window.location.hash.replace('#', ''));
+    });
 
     // keydown events
     $('body').keydown(function (e) {
