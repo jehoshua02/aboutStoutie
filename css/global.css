@@ -90,3 +90,8 @@ img {
     z-index: 100;
 }
 
+.facebook-video iframe {
+    width: 100%;
+    height: 650px;
+}
+
