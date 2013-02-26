@@ -23,7 +23,9 @@ function initSlides()
     });
 
     // set hash to first slide
-    window.location.hash = $slideIds[0];
+    if (!window.location.hash) {
+        window.location.hash = $slideIds[0];
+    }
 
     // keydown events
     $('body').keydown(function (e) {
