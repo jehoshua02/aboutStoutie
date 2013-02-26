@@ -6,12 +6,9 @@ $(function () {
 var $slideIds = [];
 function initSlides()
 {
-    colorSlides();
-
     // add slide links
     $('.slide').each(function ($i, $slide) {
         var $id = $($slide).attr('id');
-        console.log($id);
         $slideIds[$slideIds.length] = $id;
         $($slide).find('.slide-title').append(' <a class="slide-link" href="#' + $id + '">#</a>');
     });
@@ -22,19 +19,20 @@ function initSlides()
         scrollToSlide(this.hash.replace('#', ''));
     });
 
-    // set hash to first slide
+    // determine current slide
     if (!window.location.hash) {
-        window.location.hash = $slideIds[0];
+        scrollToSlide($slideIds[0]);
+    } else {
+        scrollToSlide(window.location.hash.replace('#', ''));
     }
 
     // keydown events
     $('body').keydown(function (e) {
-        // 33 and 34
-        if (e.which == 33) {
+        if (e.which == 33) { // page up
             scrollToPreviousSlide();
-        } else if (e.which == 34) {
+        } else if (e.which == 34) { // page down
             scrollToNextSlide();
-        } else if (e.which == 67) {
+        } else if (e.which == 67) { // c
             colorSlides();
         }
     });
@@ -63,24 +61,28 @@ function randomColor()
     return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
+var $currentSlideId;
 function scrollToSlide($slideId)
 {
-    colorSlides();
     var $target = $('#' + $slideId);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top
-    }, 500, 'swing', function () {
-        window.location.hash = $slideId;
-    });
+    if ($target.length != 0) {
+        colorSlides();
+        $currentSlideId = $slideId;
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 500, 'swing', function () {
+            window.location.hash = $currentSlideId;
+        });
+    }
 }
 
 function scrollToPreviousSlide()
 {
-    scrollToSlide($(window.location.hash).prev('.slide').attr('id'));
+    scrollToSlide($('#' + $currentSlideId).prev('.slide').attr('id'));
 }
 
 function scrollToNextSlide()
 {
-    scrollToSlide($(window.location.hash).next('.slide').attr('id'));
+    scrollToSlide($('#' + $currentSlideId).next('.slide').attr('id'));
 }
 
